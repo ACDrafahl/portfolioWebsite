@@ -1,0 +1,1 @@
+- Fix the project submenu on mobile

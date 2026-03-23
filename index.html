@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Andy Drafahl | Portfolio</title>
+    <style>
+      :root {
+        --primary: #f4a261;
+        --dark: hsl(0, 0%, 7%);
+        --dark-gray: hsl(240, 3%, 13%);
+        --medium-gray: hsl(0, 0%, 22%);
+        --light-gray: #ccc;
+        --white: #fff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--dark);
+        color: var(--white);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+      }
+
+      header {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        z-index: -1;
+      }
+
+      .profile-image {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid var(--primary);
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(244, 162, 97, 0.3);
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .name-highlight {
+        color: var(--primary);
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        color: var(--light-gray);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .card {
+        background-color: var(--dark-gray);
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--medium-gray);
+      }
+
+      h2 {
+        color: var(--primary);
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .skills-list li {
+        list-style: none;
+        background-color: rgba(244, 162, 97, 0.1);
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        padding: 0.5rem 1.2rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .skills-list :hover {
+        cursor: none;
+        background-color: var(--primary);
+        color: var(--dark);
+        transform: translateY(-3px);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .project {
+        background-color: rgba(244, 162, 97, 0.1);
+        border: 1px solid var(--primary);
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .project h3 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      .project p {
+        color: var(--light-gray);
+        margin-bottom: 1rem;
+      }
+
+      .project a {
+        color: var(--primary);
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .project a:hover {
+        text-decoration: underline;
+      }
+
+      .certifications-list {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+
+        list-style: none;
+        border-left: 3px solid var(--primary);
+      }
+
+      .certifications-list h2 {
+        color: var(--white);
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+      }
+
+      .certifications-list li {
+        color: var(--light-gray);
+        /* line-height: 10px; */
+        font-size: 0.9rem;
+      }
+
+      .contact-section {
+        border-top-left-radius: 150px;
+        border-top-right-radius: 150px;
+
+        text-align: center;
+        padding: 4rem 2rem;
+        background-color: rgba(244, 162, 97, 0.05);
+        margin-top: 3rem;
+      }
+
+      .contact-heading {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color: var(--primary);
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-section a {
+        color: var(--light);
+        text-decoration: none;
+        /*background-color: var(--primary);*/
+        /*text-decoration: none;*/
+        /*font-size: 2rem;*/
+        /*margin: 10px;*/
+
+        /*margin-top: 100px;*/
+        /*padding: 5px;*/
+        /*border-radius:30px;*/
+        /*transition: all 0.3s ease;*/
+      }
+
+      .contact-links a:hover {
+        transform: scale(1.05);
+      }
+
+      .contact-icon {
+        font-size: 1.5rem;
+      }
+      .custom-section {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+
+        list-style: none;
+        border-left: 3px solid var(--primary);
+      }
+
+      .custom-section h2 {
+        color: var(--white);
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+      }
+
+      .custom-section li {
+        margin-top: 20px;
+        color: var(--light-gray);
+        font-size: 0.9rem;
+      }
+      .custom-section p {
+        color: var(--light-gray);
+        margin-bottom: 1rem;
+      }
+
+      footer {
+        background-color: rgba(244, 162, 97, 0.05);
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .contact-heading {
+          font-size: 2.2rem;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-links {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .profile-image {
+          width: 150px;
+          height: 150px;
+        }
+
+        .contact-heading {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* Nav bar stuff */
+      #menu {
+        background: var(--dark);
+        height: 70px;
+        padding-left: 18px;
+        border-radius: 0px;
+        margin-left: 4px;
+      }
+      #menu ul,
+      #menu li {
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+      }
+      #menu ul {
+        width: 100%;
+        text-align: left;
+      }
+      #menu li {
+        display: inline-block;
+        position: relative;
+      }
+      #menu a {
+        display: block;
+        line-height: 70px;
+        padding: 0 14px;
+        text-decoration: none;
+        color: #f4a261;
+        font-size: 22px;
+      }
+      #menu p {
+        display: block;
+        line-height: 70px;
+        padding: 0 14px;
+        text-decoration: none;
+        color: #f4a261;
+        font-size: 22px;
+      }
+      #menu a.dropdown-arrow:after {
+        content: "\23F7";
+        margin-left: 5px;
+      }
+      #menu p.dropdown-arrow:after {
+        content: "\23F7";
+        margin-left: 5px;
+      }
+      #menu li a:hover {
+        color: #ffffff;
+        background: var(--dark);
+      }
+      #menu input {
+        display: none;
+        margin: 0;
+        padding: 0;
+        height: 70px;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
+      #menu label {
+        display: none;
+        line-height: 70px;
+        text-align: center;
+        position: absolute;
+        left: 35px;
+      }
+      #menu label:before {
+        font-size: 1.6em;
+        color: #f4a261;
+        content: "\2261";
+        margin-left: 20px;
+      }
+      #menu ul.sub-menus {
+        height: auto;
+        overflow: hidden;
+        width: 170px;
+        background: var(--dark-gray);
+        position: absolute;
+        z-index: 99;
+        display: none;
+      }
+      #menu ul.sub-menus li {
+        display: block;
+        text-align: left;
+        width: 100%;
+      }
+      #menu ul.sub-menus a {
+        color: #f4a261;
+        font-size: 22px;
+      }
+      #menu li:hover ul.sub-menus {
+        display: block;
+      }
+      #menu ul.sub-menus a:hover {
+        background: var(--dark-gray);
+        color: #ffffff;
+      }
+      @media screen and (max-width: 800px) {
+        #menu {
+          position: relative;
+        }
+        #menu ul {
+          background: var(--dark);
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          z-index: 3;
+          height: auto;
+          display: none;
+          text-align: left;
+        }
+        #menu ul.sub-menus {
+          width: 100%;
+          position: static;
+        }
+        #menu ul.sub-menus a {
+          padding-left: 30px;
+        }
+        #menu li {
+          display: block;
+          float: none;
+          width: auto;
+        }
+        #menu input,
+        #menu label {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+        }
+        #menu input {
+          z-index: 4;
+        }
+        #menu input:checked + label {
+          color: #f4a261;
+        }
+        #menu input:checked + label:before {
+          content: "\00d7";
+        }
+        #menu input:checked ~ ul {
+          display: block;
+        }
+      }
+
+      /* mobile styles */
+      @media only screen and (max-width: 767px) {
+        .menu-container {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+
+        .menu {
+          position: absolute;
+          box-sizing: border-box;
+          width: 300px;
+          right: -300px;
+          top: 0;
+          margin: -20px;
+          padding: 75px 50px 50px;
+          background: #f4a261;
+          -webkit-font-smoothing: antialiased;
+          /* to stop flickering of text in safari */
+          transform-origin: 0% 0%;
+          transform: translateX(0%);
+          transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        }
+
+        .menu-container input:checked ~ .menu {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* desktop styles */
+      @media only screen and (min-width: 768px) {
+        .menu-container {
+          width: 100%;
+        }
+
+        .menu-container a {
+          color: #f4a261;
+        }
+
+        .menu-container input {
+          display: none;
+        }
+
+        /* Burger menu */
+        .menu-container span {
+          display: none;
+        }
+
+        .menu {
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .menu ul {
+          display: flex;
+          padding: 0;
+        }
+
+        .menu li {
+          padding: 0 20px;
+        }
+      }
+    </style>
+  </head>
+  <script>
+    function updatemenu() {
+      if (document.getElementById("responsive-menu").checked == true) {
+        document.getElementById("menu").style.borderBottomRightRadius = "0";
+        document.getElementById("menu").style.borderBottomLeftRadius = "0";
+      } else {
+        document.getElementById("menu").style.borderRadius = "0px";
+      }
+    }
+  </script>
+  <body>
+    <nav id="menu">
+      <input
+        type="checkbox"
+        id="responsive-menu"
+        onclick="updatemenu()"
+      /><label></label>
+      <ul>
+        <li><a href="/"><b>About Me</b></a></li>
+        <li>
+          <p class="dropdown-arrow">Projects</p>
+          <ul class="sub-menus">
+            <li><a href="/softwareProjects.html">Software</a></li>
+            <li><a href="/designAndWritingProjects.html">Design/Writing</a></li>
+            <li><a href="/videoEditingProjects.html">Video Editing</a></li>
+          </ul>
+        </li>
+        <li><a href="/resume.html">Resume</a></li>
+      </ul>
+    </nav>
+
+    
+    <header>
+      <img src="Profile.jpg" alt="Andy Drafahl" class="profile-image" />
+      <h1>Hey! I'm <span class="name-highlight">Andy Drafahl</span></h1>
+      <p class="tagline">
+        I'm a software engineer with a minor in technical communication. I enjoy
+        software development, UX/UI design, graphic design, writing, video
+        editing, and lately, I've been getting into web design. (Which is why
+        I'm learning HTML and CSS to build the portfolio you're viewing right
+        now!)
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Skills</h2>
+        <div class="skills-list">
+          <li>Software Development</li>
+          <li>UX/UI Design</li>
+          <li>Graphic Design</li>
+          <li>Writing</li>
+          <li>Video Editing</li>
+          <li>Web Design</li>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Certifications</h2>
+        <div class="certifications-list">
+          <li>Bachelors in Software Engineering</li>
+        </div>
+        <div class="certifications-list">
+          <li>Minor in Technical Communication</li>
+        </div>
+      </section>
+    </main>
+
+    <section class="contact-section">
+      <h2 class="contact-heading">Let's Connect</h2>
+      <div class="contact-links">
+        <div class="contact">
+          <h3><i class="fas fa-phone"></i> 515-218-4529</h3>
+          <h3>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:acd7@iastate.edu"> acd7@iastate.edu</a>
+          </h3>
+          <h3>
+            <i class="fab fa-linkedin"></i
+            ><a href="https://www.linkedin.com/in/andy-drafahl" target="_blank">
+              LinkedIn</a
+            >
+          </h3>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy;Andy Drafahl. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
