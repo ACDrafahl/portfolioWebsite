@@ -1,7 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <body>
-        <h1>Oh yeah,</h1>
-        <p>it's all coming together</p>
-    </body>
+  <title>Alt Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="css/mainAlt.css" />
+  <script src="js/fos.min.js"></script>
+
+  <body>
+    <!-- <h1>Oh yeah,</h1>
+    <p>it's all coming together</p> -->
+
+    <fos-desktop>
+      <fos-icon href="a1">A</fos-icon>
+      <fos-icon href="a2">B</fos-icon>
+
+      <fos-window name="a1" title="Window 1">
+        This is the first window
+      </fos-window>
+
+      <fos-window name="a2" title="Window 1">
+        <fos-bar position="top">
+          <fos-menu name="menu">
+            <fos-menu-item href="panel1">Panel 1</fos-menu-item>
+            <fos-menu-item href="panel2">Panel 2</fos-menu-item>
+          </fos-menu>
+        </fos-bar>
+        <!-- Fix this, these breaks are dumb -->
+        <br /><br /><br />
+        <fos-panel name="panel1" selected> Wow! Look at this panel! </fos-panel>
+        <fos-panel name="panel2" selected>
+          Wow! Look at this other panel!
+        </fos-panel>
+      </fos-window>
+
+      <fos-bar>
+        <fos-menu name="App">
+          <fos-menu-item href="a">App 1</fos-menu-item>
+          <fos-menu-item href="b">App 1</fos-menu-item>
+        </fos-menu>
+      </fos-bar>
+    </fos-desktop>
+  </body>
 </html>
