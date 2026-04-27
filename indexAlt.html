@@ -1,42 +1,46 @@
 <!doctype html>
-<html>
-  <title>Alt Portfolio</title>
-  <link rel="stylesheet" type="text/css" href="css/mainAlt.css" />
-  <script src="js/fos.min.js"></script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alt Portfolio</title>
+    <link rel="stylesheet" href="css/mainAlt.css" />
+
+    <!-- fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
 
   <body>
-    <!-- <h1>Oh yeah,</h1>
-    <p>it's all coming together</p> -->
+    <div class="screen">
+      <div class="title">
+        <div class="title__box title__box--logo">
+          <img src="projectImages/altAboutPage/siloLogoCutout.png" alt="logo"/>
+        </div>
 
-    <fos-desktop>
-      <fos-icon href="a1">A</fos-icon>
-      <fos-icon href="a2">B</fos-icon>
+        <div class="title__box title__box--page-name">
+          <span class="text text--page-name">ABOUT</span>
+        </div>
 
-      <fos-window name="a1" title="Window 1">
-        This is the first window
-      </fos-window>
+        <div class="title__box title__box--letter-scramble">
+          <div class="letter-scramble__bar"></div>
+          <div class="letter-scramble__text">
+            .............c..........................o.................b..............k.......
+            .............a.........................................r.........................
+            ..................................x..............................................
+            ..l...................r...............................g..............t...........
+          </div>
+          <div class="letter-scramble__bar"></div>
+        </div>
+      </div>
+      <div class="options">
 
-      <fos-window name="a2" title="Window 1">
-        <fos-bar position="top">
-          <fos-menu name="menu">
-            <fos-menu-item href="panel1">Panel 1</fos-menu-item>
-            <fos-menu-item href="panel2">Panel 2</fos-menu-item>
-          </fos-menu>
-        </fos-bar>
-        <!-- Fix this, these breaks are dumb -->
-        <br /><br /><br />
-        <fos-panel name="panel1" selected> Wow! Look at this panel! </fos-panel>
-        <fos-panel name="panel2" selected>
-          Wow! Look at this other panel!
-        </fos-panel>
-      </fos-window>
+      </div>
+      <div class="patient-information">
 
-      <fos-bar>
-        <fos-menu name="App">
-          <fos-menu-item href="a">App 1</fos-menu-item>
-          <fos-menu-item href="b">App 1</fos-menu-item>
-        </fos-menu>
-      </fos-bar>
-    </fos-desktop>
+      </div>
+      <div class="content-scroll">
+
+      </div>
+    </div>
   </body>
 </html>
