@@ -78,7 +78,7 @@ body {
 
 .title__box--letter-scramble {
     width: calc(70 * var(--ui-scale));
-    background: black;
+    background: transparent;
 
     display: flex;
     flex-direction: column;
@@ -101,4 +101,28 @@ body {
     font-size: calc(1.5 * var(--ui-scale));
     line-height: .9; 
     color: var(--green);
+}
+
+.options {
+    display: flex;
+    gap: calc(1 * var(--ui-scale));
+    padding: calc(1 * var(--ui-scale));
+}
+
+.options__box {
+    width: calc(var(--box-width) * var(--ui-scale));   /* important: creates room */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 calc(1 * var(--ui-scale));
+    height: calc(3 * var(--ui-scale));
+
+    border: calc(0.4 * var(--ui-scale)) solid var(--blue);
+}
+
+.options__label {
+    font-family: "Press Start 2P", monospace;
+    font-size: calc(1.2 * var(--ui-scale));
+    color: var(--blue);
 }
