@@ -166,7 +166,7 @@ body {
     margin-top: calc(2 * var(--ui-scale));
 }
 
-.patient-info__field-label--top-left {
+.patient-info__field-label {
     margin-left: calc(2 * var(--ui-scale));
     margin-bottom: calc(1 * var(--ui-scale));
     display: block;
@@ -175,10 +175,18 @@ body {
     color: var(--green);
 }
 
-.patient-info__field-value {
+.patient-info__field-value--top-row {
     margin-left: calc(2 * var(--ui-scale));
     display: block;
     font-size: calc(4 * var(--ui-scale));
+    font-family: "IBM BIOS", monospace;
+    color: var(--green);
+}
+
+.patient-info__field-value--bottom-row {
+    margin-left: calc(2 * var(--ui-scale));
+    display: block;
+    font-size: calc(3 * var(--ui-scale));
     font-family: "IBM BIOS", monospace;
     color: var(--green);
 }
