@@ -52,3 +52,13 @@ document.addEventListener("mousemove", (e) => {
 
     thumb.style.transform = `translateY(${clampedY}px)`;
 });
+
+// CRT flicker effect
+const screen = document.querySelector(".screen");
+
+setInterval(() => {
+    if (!screen) return;
+
+    const flicker = 0.97 + Math.random() * 0.03;
+    screen.style.opacity = flicker;
+}, 120);
